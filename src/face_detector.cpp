@@ -23,20 +23,30 @@ int main(int argc, char *argv[])
 	
 	// Programa per detectar cara
         CascadeClassifier face_cascade;	
-	face_cascade.load("haarcascade_frontalface_alt.xml");
+	face_cascade.load("haarcascade_frontalface_default.xml");
 	// Programa per detectar ulls
         CascadeClassifier eyes_cascade;	
-	face_cascade.load("haarcascade_eye_tree_eyeglasses.xml");
+	eyes_cascade.load("haarcascade_eye_tree_eyeglasses.xml");
+	// Programa per detectar el nas
+        //CascadeClassifier nose_cascade;	
+	//nose_cascade.load("haarcascade_mcs_nose.xml");
 
+	// Llegint la imatge mustache
+	//Mat mustache = imread("/home/pau/Escritorio/Master en Robotica/Perception System/RoboticaUVic-FaceDetect/img/moustache.png");
 
+	
 	// Per saber si carrega be el arxiu xml o no
- 		if (!face_cascade.load("haarcascade_frontalface_alt.xml")) {
-         		printf("--(!)Error loading the haarcascade_frontalface_alt.xml\n"); return -1; 
+ 		if (!face_cascade.load("haarcascade_frontalface_default.xml")) {
+         		printf("--(!)Error loading the haarcascade_frontalface_default.xml\n"); return -1; 
     			}
 
 		if (!eyes_cascade.load("haarcascade_eye_tree_eyeglasses.xml")) {
          		printf("--(!)Error loading the haarcascade_eye_tree_eyeglasses.xml\n"); return -1; 
     			}
+
+		/*if (!nose_cascade.load("haarcascade_mcs_nose.xml")) {
+         		printf("--(!)Error loading the haarcascade_mcs_nose.xml\n"); return -1; 
+    			}*/
 
 	//check user args
 	switch(argc)
