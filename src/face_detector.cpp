@@ -25,8 +25,8 @@ int main(int argc, char *argv[])
         CascadeClassifier face_cascade;	
 	face_cascade.load("haarcascade_frontalface_default.xml");
 	// Programa per detectar ulls
-        CascadeClassifier eyes_cascade;	
-	eyes_cascade.load("haarcascade_eye_tree_eyeglasses.xml");
+        //CascadeClassifier eyes_cascade;	
+	//eyes_cascade.load("haarcascade_eye_tree_eyeglasses.xml");
 	// Programa per detectar el nas
         //CascadeClassifier nose_cascade;	
 	//nose_cascade.load("haarcascade_mcs_nose.xml");
@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
          		printf("--(!)Error loading the haarcascade_frontalface_default.xml\n"); return -1; 
     			}
 
-		if (!eyes_cascade.load("haarcascade_eye_tree_eyeglasses.xml")) {
+		/*if (!eyes_cascade.load("haarcascade_eye_tree_eyeglasses.xml")) {
          		printf("--(!)Error loading the haarcascade_eye_tree_eyeglasses.xml\n"); return -1; 
-    			}
+    			}*/
 
 		/*if (!nose_cascade.load("haarcascade_mcs_nose.xml")) {
          		printf("--(!)Error loading the haarcascade_mcs_nose.xml\n"); return -1; 
@@ -92,12 +92,12 @@ int main(int argc, char *argv[])
 	equalizeHist(gray_image, gray_image);
 
 	vector<Rect> faces;
-	face_cascade.detectMultiScale(gray_image, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30,30));
+	face_cascade.detectMultiScale(gray_image, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(100,100));
 
     for (int i = 0; i < faces.size(); i++) {
         // visualize the faces
        	Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
-        ellipse( image, center, Size( faces[i].width*0.5, faces[i].height*0.5), 1.1, 1, 360, Scalar( 255, 0, 255 ), 5, 15, 0 );
+        ellipse( image, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
            
     //********************************************************************
 
