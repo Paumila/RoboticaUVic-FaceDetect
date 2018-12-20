@@ -31,8 +31,11 @@ int main(int argc, char *argv[])
         //CascadeClassifier nose_cascade;	
 	//nose_cascade.load("haarcascade_mcs_nose.xml");
 
+	// Llegint la imatge hat
+	Mat hat = imread("/home/pau/Escritorio/Master en Robotica/Perception System/RoboticaUVic-FaceDetect/img/hat.png");
 	// Llegint la imatge mustache
-	//Mat mustache = imread("/home/pau/Escritorio/Master en Robotica/Perception System/RoboticaUVic-FaceDetect/img/moustache.png");
+	Mat moustache = imread("/home/pau/Escritorio/Master en Robotica/Perception System/RoboticaUVic-FaceDetect/img/moustache.png");
+
 
 	
 	// Per saber si carrega be el arxiu xml o no
@@ -98,6 +101,27 @@ int main(int argc, char *argv[])
         // visualize the faces
        	Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
         ellipse( image, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
+
+	// Adjuntar el barret
+
+	/*
+
+	int width = faces[i].width;
+	int height = faces[i].height;
+
+	int x = faces[i].x;
+	int y = (faces[i].y - faces[i].y/2);
+
+	int x_m = faces[i].x;
+	int y_m = (faces[i].y);
+
+	resize(hat, hat, Size(width,height),CV_INTER_LINEAR);
+	hat.copyTo(image(Rect(x,y,width,height)));
+
+	resize(moustache, moustache, Size(width,height),CV_INTER_LINEAR);
+	moustache.copyTo(image(Rect(x_m,y_m,width,height)));
+
+	*/
            
     //********************************************************************
 
