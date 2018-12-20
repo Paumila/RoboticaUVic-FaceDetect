@@ -102,9 +102,10 @@ int main(int argc, char *argv[])
        	Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
         ellipse( image, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
 
-	// Adjuntar el barret
 
-	/*
+	/*// Adjuntar el barret
+
+	
 
 	int width = faces[i].width;
 	int height = faces[i].height;
@@ -119,9 +120,9 @@ int main(int argc, char *argv[])
 	hat.copyTo(image(Rect(x,y,width,height)));
 
 	resize(moustache, moustache, Size(width,height),CV_INTER_LINEAR);
-	moustache.copyTo(image(Rect(x_m,y_m,width,height)));
+	moustache.copyTo(image(Rect(x_m,y_m,width,height)));*/
 
-	*/
+	
            
     //********************************************************************
 
